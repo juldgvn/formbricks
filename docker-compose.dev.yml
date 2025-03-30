@@ -43,3 +43,20 @@ volumes:
     driver: local
   minio-data:
     driver: local
+
+    networks:
+      - internal-formbricks-2tpvfy
+    labels:
+      - traefik.http.routers.internal-formbricks-2tpvfy-11-web.rule=Host(`internal-formbricks-4f55cb-159-69-14-128.traefik.me`)
+      - traefik.http.routers.internal-formbricks-2tpvfy-11-web.entrypoints=web
+      - traefik.http.services.internal-formbricks-2tpvfy-11-web.loadbalancer.server.port=3000
+      - traefik.http.routers.internal-formbricks-2tpvfy-11-web.service=internal-formbricks-2tpvfy-11-web
+      - traefik.enable=true
+volumes:
+  postgres-internal-formbricks-2tpvfy:
+    driver: local
+  uploads-internal-formbricks-2tpvfy: null
+networks:
+  internal-formbricks-2tpvfy:
+    name: internal-formbricks-2tpvfy
+    external: true
