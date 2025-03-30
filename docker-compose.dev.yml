@@ -45,18 +45,18 @@ volumes:
     driver: local
 
     networks:
-      - internal-formbricks-2tpvfy
+      - internal-formbriks-3kgzzb
     labels:
-      - traefik.http.routers.internal-formbricks-2tpvfy-11-web.rule=Host(`internal-formbricks-4f55cb-159-69-14-128.traefik.me`)
-      - traefik.http.routers.internal-formbricks-2tpvfy-11-web.entrypoints=web
-      - traefik.http.services.internal-formbricks-2tpvfy-11-web.loadbalancer.server.port=3000
-      - traefik.http.routers.internal-formbricks-2tpvfy-11-web.service=internal-formbricks-2tpvfy-11-web
+      - traefik.http.routers.internal-formbriks-3kgzzb-11-web.rule=Host(`internal-formbricks-4f55cb-159-69-14-128.traefik.me`)
+      - traefik.http.routers.internal-formbriks-3kgzzb-11-web.entrypoints=web
+      - traefik.http.services.internal-formbriks-3kgzzb-11-web.loadbalancer.server.port=3000
+      - traefik.http.routers.internal-formbriks-3kgzzb-11-web.service=internal-formbriks-3kgzzb-11-web
       - traefik.enable=true
 volumes:
-  postgres-internal-formbricks-2tpvfy:
+  postgres-internal-formbriks-3kgzzb:
     driver: local
-  uploads-internal-formbricks-2tpvfy: null
+  uploads-internal-formbriks-3kgzzb: null
 networks:
-  internal-formbricks-2tpvfy:
-    name: internal-formbricks-2tpvfy
+  internal-formbriks-3kgzzb:
+    name: internal-formbriks-3kgzzb
     external: true
